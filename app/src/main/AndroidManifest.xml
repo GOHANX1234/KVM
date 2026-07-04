@@ -51,6 +51,7 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
+            android:theme="@style/Theme.KVM.Starting"
             android:windowSoftInputMode="adjustResize"
             android:launchMode="singleTask">
             <intent-filter>
@@ -213,3 +214,4 @@
 
     </application>
 </manifest>
+          
