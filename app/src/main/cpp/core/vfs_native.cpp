@@ -168,8 +168,9 @@ static int hook_stat(const char* path, struct stat* buf) {
     if (path) { t = vfsTranslatePath(path); translated = t.c_str(); }
 
     if (orig_stat) return orig_stat(translated, buf);
-    // fstatat syscall fallback (stat is fstatat with AT_FDCWD + 0 flags)
-    return static_cast<int>(::syscall(__NR_fstatat, AT_FDCWD, translated, buf, 0));
+    // fstatat syscall fallback — ARM64 uses __NR_newfstatat (79); __NR_fstatat is
+    // not defined in the NDK sysroot for aarch64-linux-android.
+    return static_cast<int>(::syscall(__NR_newfstatat, AT_FDCWD, translated, buf, 0));
 }
 
 static int hook_mkdir(const char* path, mode_t mode) {
