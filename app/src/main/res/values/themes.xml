@@ -8,6 +8,24 @@
         regardless of the device's system light/dark setting).
     -->
 
+    <!--
+        ── Splash-screen theme (mandatory for core-splashscreen 1.0.x) ──────
+        MainActivity must use THIS theme, not Theme.KVM directly.
+        On API < 31, core-splashscreen renders its own compat splash using the
+        windowSplashScreen* attributes defined here.  On API 31+, the platform
+        reads these same attrs from the activity window.
+        postSplashScreenTheme tells the library to switch to Theme.KVM once the
+        splash is dismissed, so the app runs under the full Material3 theme.
+    -->
+    <style name="Theme.KVM.Starting" parent="Theme.SplashScreen">
+        <!-- Splash background — same near-black as the app background -->
+        <item name="windowSplashScreenBackground">@color/kvm_background</item>
+        <!-- KVM logo shown centred during the splash window -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_kvm_logo_small</item>
+        <!-- Switch to the full theme once splash is dismissed -->
+        <item name="postSplashScreenTheme">@style/Theme.KVM</item>
+    </style>
+
     <!-- ── Dark Theme (only theme) ──────────────────────────────────────── -->
     <style name="Theme.KVM" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Primary palette -->
@@ -64,9 +82,6 @@
         <item name="motionDurationMedium1">200</item>
         <item name="motionDurationMedium2">300</item>
         <item name="motionDurationLong1">450</item>
-
-        <!-- Splash screen icon background -->
-        <item name="android:windowSplashScreenBackground">@color/kvm_primary</item>
 
         <item name="android:windowIsTranslucent">false</item>
     </style>
