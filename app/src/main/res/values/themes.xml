@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+        KVM uses Material Design 3 (Material You).
+        The design language is "Liquid Glass" — a true-dark, iOS-inspired frosted
+        surface language with a vibrant indigo/violet accent family, tight corner
+        radii, and fluid motion. This is the app's ONLY theme (always dark,
+        regardless of the device's system light/dark setting).
+    -->
+
+    <!-- ── Dark Theme (only theme) ──────────────────────────────────────── -->
+    <style name="Theme.KVM" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary palette -->
+        <item name="colorPrimary">@color/kvm_primary</item>
+        <item name="colorOnPrimary">@color/kvm_on_primary</item>
+        <item name="colorPrimaryContainer">@color/kvm_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/kvm_on_primary_container</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/kvm_secondary</item>
+        <item name="colorOnSecondary">@color/kvm_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/kvm_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/kvm_on_secondary_container</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">@color/kvm_tertiary</item>
+        <item name="colorOnTertiary">@color/kvm_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/kvm_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/kvm_on_tertiary_container</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/kvm_error</item>
+        <item name="colorOnError">@color/kvm_on_error</item>
+        <item name="colorErrorContainer">@color/kvm_error_container</item>
+        <item name="colorOnErrorContainer">@color/kvm_on_error_container</item>
+
+        <!-- Surface / background -->
+        <item name="android:colorBackground">@color/kvm_background</item>
+        <item name="colorSurface">@color/kvm_surface</item>
+        <item name="colorOnSurface">@color/kvm_on_surface</item>
+        <item name="colorSurfaceVariant">@color/kvm_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/kvm_on_surface_variant</item>
+        <item name="colorOutline">@color/kvm_outline</item>
+        <item name="colorOutlineVariant">@color/kvm_outline_variant</item>
+
+        <!-- System bars — fully transparent, edge-to-edge (drawing behind them
+             is handled in code via enableEdgeToEdge()+WindowInsets so content
+             never sits underneath status/nav bar icons). -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">false</item>
+
+        <!-- Shape — tight corners for iOS-level polish -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.KVM.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.KVM.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.KVM.LargeComponent</item>
+
+        <!-- Motion -->
+        <item name="motionDurationShort1">75</item>
+        <item name="motionDurationShort2">150</item>
+        <item name="motionDurationMedium1">200</item>
+        <item name="motionDurationMedium2">300</item>
+        <item name="motionDurationLong1">450</item>
+
+        <!-- Splash screen icon background -->
+        <item name="android:windowSplashScreenBackground">@color/kvm_primary</item>
+
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <!-- ── Launcher theme (used by VirtualLauncherActivity) ─────────────── -->
+    <style name="Theme.KVM.Launcher" parent="Theme.KVM">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- ── Transparent theme (stub activities) ──────────────────────────── -->
+    <style name="Theme.Transparent" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- ── Shape appearances ─────────────────────────────────────────────── -->
+    <style name="ShapeAppearance.KVM.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.KVM.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.KVM.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!-- ── Button styles ─────────────────────────────────────────────────── -->
+    <style name="Widget.KVM.Button.Primary" parent="Widget.Material3.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="Widget.KVM.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+</resources>

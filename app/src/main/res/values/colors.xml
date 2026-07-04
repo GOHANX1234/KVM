@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- KVM "Liquid Glass" dark palette — iOS-inspired true-dark surfaces with
+         a vibrant indigo/violet accent family. This is the app's ONLY theme;
+         there is intentionally no light variant. -->
+
+    <!-- Primary palette — vibrant indigo (iOS systemIndigo dark family) -->
+    <color name="kvm_primary">#7C7BFF</color>
+    <color name="kvm_on_primary">#0B0B14</color>
+    <color name="kvm_primary_container">#2E2C5C</color>
+    <color name="kvm_on_primary_container">#E4E3FF</color>
+
+    <!-- Secondary — electric violet -->
+    <color name="kvm_secondary">#B98CFF</color>
+    <color name="kvm_on_secondary">#140B24</color>
+    <color name="kvm_secondary_container">#3A2A5C</color>
+    <color name="kvm_on_secondary_container">#EBDCFF</color>
+
+    <!-- Tertiary — electric cyan accent -->
+    <color name="kvm_tertiary">#5AC8FA</color>
+    <color name="kvm_on_tertiary">#04222D</color>
+    <color name="kvm_tertiary_container">#0E3A47</color>
+    <color name="kvm_on_tertiary_container">#BEEBFF</color>
+
+    <!-- Backgrounds — true dark, near-black with a whisper of indigo -->
+    <color name="kvm_background">#08080D</color>
+    <color name="kvm_on_background">#F2F1F7</color>
+    <color name="kvm_surface">#131218</color>
+    <color name="kvm_on_surface">#F2F1F7</color>
+    <color name="kvm_surface_variant">#1C1B24</color>
+    <color name="kvm_on_surface_variant">#B8B6C4</color>
+
+    <!-- Error -->
+    <color name="kvm_error">#FF6961</color>
+    <color name="kvm_on_error">#2A0000</color>
+    <color name="kvm_error_container">#4A1512</color>
+    <color name="kvm_on_error_container">#FFDAD6</color>
+
+    <!-- Outline / dividers -->
+    <color name="kvm_outline">#3C3A46</color>
+    <color name="kvm_outline_variant">#2A2830</color>
+
+    <!-- Deep-space background gradient stops used behind all screens -->
+    <color name="kvm_background_dark">#08080D</color>
+    <color name="kvm_surface_dark">#131218</color>
+    <color name="kvm_surface_variant_dark">#1C1B24</color>
+
+    <!-- Icon badge (instance #) -->
+    <color name="badge_background">#FF375F</color>
+    <color name="badge_text">#FFFFFF</color>
+
+    <!-- Status colors (iOS system palette, dark-mode values) -->
+    <color name="status_running">#30D158</color>
+    <color name="status_stopped">#8E8E93</color>
+    <color name="status_crashed">#FF453A</color>
+    <color name="status_starting">#FF9F0A</color>
+
+    <!-- Gradient start / end for glow accents behind content -->
+    <color name="gradient_start">#7C7BFF</color>
+    <color name="gradient_end">#B98CFF</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+</resources>

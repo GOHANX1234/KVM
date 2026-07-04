@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive icon foreground — three cascading rounded-square "cards", the
+  visual metaphor for cloned/virtualized app instances. All shapes sit well
+  inside the 66dp safe zone (21..87 on the 108x108 canvas) so nothing is
+  clipped by circular/squircle/rounded-square launcher masks.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- back card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.38"
+        android:pathData="M33,24 h22 a9,9 0 0 1 9,9 v22 a9,9 0 0 1 -9,9 h-22 a9,9 0 0 1 -9,-9 v-22 a9,9 0 0 1 9,-9 Z" />
+
+    <!-- middle card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.68"
+        android:pathData="M43,34 h22 a9,9 0 0 1 9,9 v22 a9,9 0 0 1 -9,9 h-22 a9,9 0 0 1 -9,-9 v-22 a9,9 0 0 1 9,-9 Z" />
+
+    <!-- front card -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="1"
+        android:pathData="M53,44 h22 a9,9 0 0 1 9,9 v22 a9,9 0 0 1 -9,9 h-22 a9,9 0 0 1 -9,-9 v-22 a9,9 0 0 1 9,-9 Z" />
+</vector>

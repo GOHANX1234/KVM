@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  KVM in-app logo mark (used in headers/toolbars, NOT the launcher icon —
+  see mipmap-anydpi-v26/ic_launcher.xml for that). Solid closed shapes only,
+  so it renders reliably at small sizes: a rounded chip with three cascading
+  "cloned instance" cards, matching the app launcher icon's visual language.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Chip background -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M4,6 Q4,4 6,4 H18 Q20,4 20,6 V18 Q20,20 18,20 H6 Q4,20 4,18 Z" />
+
+    <!-- back card -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:fillAlpha="0.38"
+        android:pathData="M7,7 h6 a1.6,1.6 0 0 1 1.6,1.6 v6 a1.6,1.6 0 0 1 -1.6,1.6 h-6 a1.6,1.6 0 0 1 -1.6,-1.6 v-6 a1.6,1.6 0 0 1 1.6,-1.6 Z" />
+
+    <!-- middle card -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:fillAlpha="0.68"
+        android:pathData="M9,9 h6 a1.6,1.6 0 0 1 1.6,1.6 v6 a1.6,1.6 0 0 1 -1.6,1.6 h-6 a1.6,1.6 0 0 1 -1.6,-1.6 v-6 a1.6,1.6 0 0 1 1.6,-1.6 Z" />
+
+    <!-- front card -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M11,11 h6 a1.6,1.6 0 0 1 1.6,1.6 v6 a1.6,1.6 0 0 1 -1.6,1.6 h-6 a1.6,1.6 0 0 1 -1.6,-1.6 v-6 a1.6,1.6 0 0 1 1.6,-1.6 Z" />
+</vector>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing system (4dp base unit) -->
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_48">48dp</dimen>
+    <dimen name="spacing_64">64dp</dimen>
+
+    <!-- App grid -->
+    <dimen name="app_icon_size">60dp</dimen>
+    <dimen name="app_icon_corner_radius">14dp</dimen>
+    <dimen name="app_grid_item_padding">8dp</dimen>
+    <dimen name="app_name_text_size">11sp</dimen>
+    <dimen name="badge_size">18dp</dimen>
+    <dimen name="badge_text_size">10sp</dimen>
+
+    <!-- Cards -->
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+    <!-- Bottom navigation -->
+    <dimen name="bottom_nav_height">64dp</dimen>
+
+    <!-- FAB -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Device app list -->
+    <dimen name="device_app_icon_size">48dp</dimen>
+    <dimen name="device_app_item_height">72dp</dimen>
+</resources>

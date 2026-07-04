@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Host private data dir — used for sharing APK files from the virtual store -->
+    <files-path name="private_files" path="." />
+    <cache-path name="private_cache" path="." />
+    <!-- Virtual APK store -->
+    <files-path name="virtual_apks" path="virtual/apks/" />
+    <!-- External storage (pre-Android 10) -->
+    <external-path name="external_files" path="." />
+    <external-cache-path name="external_cache" path="." />
+</paths>

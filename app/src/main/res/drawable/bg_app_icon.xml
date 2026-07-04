@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Rounded square background for virtual app icons.
+  Corner radius matches iOS app icon squircle (14dp at 60dp icon size).
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="14dp" />
+    <solid android:color="?attr/colorSurfaceVariant" />
+</shape>

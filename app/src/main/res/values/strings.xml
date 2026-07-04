@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KVM</string>
+    <string name="app_description">Virtual Space — Clone &amp; Run</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_apps">Apps</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Home -->
+    <string name="empty_state_title">No virtual apps yet</string>
+    <string name="empty_state_subtitle">Clone an installed app or install an APK to get started</string>
+    <string name="btn_add_app">Clone App</string>
+    <string name="btn_install_apk">Install APK</string>
+
+    <!-- Apps -->
+    <string name="search_hint">Search apps…</string>
+    <string name="chip_system_apps">System Apps</string>
+    <string name="btn_clone">Clone</string>
+    <string name="btn_add_instance">Add Instance</string>
+    <string name="cloned_badge">Cloned</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_storage_permission">Storage Permission</string>
+    <string name="settings_storage_desc">Required for APK file access</string>
+    <string name="settings_install_permission">Install Permission</string>
+    <string name="settings_install_desc">Required to intercept APK installs</string>
+    <string name="settings_clear_all">Clear All Virtual Apps</string>
+    <string name="settings_clear_desc">Uninstall all clones and delete their data</string>
+    <string name="settings_verbose_log">Verbose Logging</string>
+    <string name="settings_verbose_desc">Debug build only</string>
+    <string name="settings_about">About</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_uninstall_title">Uninstall</string>
+    <string name="dialog_uninstall_message">Remove %1$s (instance #%2$d) from KVM?</string>
+    <string name="dialog_clear_all_title">Clear All Virtual Apps</string>
+    <string name="dialog_clear_all_message">This will uninstall ALL virtual apps and delete their data. This cannot be undone.</string>
+    <string name="dialog_btn_uninstall">Uninstall</string>
+    <string name="dialog_btn_clear">Clear All</string>
+    <string name="dialog_btn_cancel">Cancel</string>
+    <string name="dialog_btn_ok">OK</string>
+
+    <!-- Notifications -->
+    <string name="notification_engine_title">KVM Virtual Space</string>
+    <string name="notification_engine_text">Virtual environment is running</string>
+    <string name="notification_btn_stop">Stop</string>
+
+    <!-- Errors -->
+    <string name="error_clone_failed">Failed to clone app: %1$s</string>
+    <string name="error_install_failed">Failed to install APK: %1$s</string>
+    <string name="error_launch_failed">Failed to launch: %1$s</string>
+    <string name="error_package_not_found">Package not found</string>
+    <string name="error_invalid_apk">Invalid or corrupt APK file</string>
+</resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  KVM — Virtual Space
+  The manifest pre-declares a pool of Stub components so AMS validates them
+  before the virtual engine swaps in the real guest component at runtime.
+  Stub counts must match BuildConfig.STUB_ACTIVITY_COUNT / STUB_SERVICE_COUNT.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ─── Permissions ───────────────────────────────────────────────── -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- ─── Application ───────────────────────────────────────────────── -->
+    <application
+        android:name=".KVMApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KVM"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="31">
+
+        <!-- ══ Host UI ══════════════════════════════════════════════════ -->
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Virtual app launcher entry point -->
+        <activity
+            android:name=".presentation.launcher.VirtualLauncherActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.KVM.Launcher" />
+
+        <!-- ══ Stub Activities (20 slots) ════════════════════════════════
+             Each stub is transparent so the virtual app's window shows
+             through; the VirtualActivityManager assigns slots at launch. -->
+        <activity android:name=".stub.StubActivity$P00" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p0" />
+        <activity android:name=".stub.StubActivity$P01" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p0" />
+        <activity android:name=".stub.StubActivity$P02" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTop"
+            android:taskAffinity="" android:process=":p0" />
+        <activity android:name=".stub.StubActivity$P03" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTask"
+            android:taskAffinity="" android:process=":p0" />
+        <activity android:name=".stub.StubActivity$P04" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleInstance"
+            android:taskAffinity="" android:process=":p0" />
+        <activity android:name=".stub.StubActivity$P05" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p1" />
+        <activity android:name=".stub.StubActivity$P06" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p1" />
+        <activity android:name=".stub.StubActivity$P07" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTop"
+            android:taskAffinity="" android:process=":p1" />
+        <activity android:name=".stub.StubActivity$P08" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTask"
+            android:taskAffinity="" android:process=":p1" />
+        <activity android:name=".stub.StubActivity$P09" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleInstance"
+            android:taskAffinity="" android:process=":p1" />
+        <activity android:name=".stub.StubActivity$P10" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p2" />
+        <activity android:name=".stub.StubActivity$P11" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p2" />
+        <activity android:name=".stub.StubActivity$P12" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTop"
+            android:taskAffinity="" android:process=":p2" />
+        <activity android:name=".stub.StubActivity$P13" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTask"
+            android:taskAffinity="" android:process=":p2" />
+        <activity android:name=".stub.StubActivity$P14" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleInstance"
+            android:taskAffinity="" android:process=":p2" />
+        <activity android:name=".stub.StubActivity$P15" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p3" />
+        <activity android:name=".stub.StubActivity$P16" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="standard"
+            android:taskAffinity="" android:process=":p3" />
+        <activity android:name=".stub.StubActivity$P17" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTop"
+            android:taskAffinity="" android:process=":p3" />
+        <activity android:name=".stub.StubActivity$P18" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleTask"
+            android:taskAffinity="" android:process=":p3" />
+        <activity android:name=".stub.StubActivity$P19" android:exported="false"
+            android:theme="@style/Theme.Transparent" android:launchMode="singleInstance"
+            android:taskAffinity="" android:process=":p3" />
+
+        <!-- ══ Stub Services (10 slots) ══════════════════════════════════ -->
+        <service android:name=".stub.StubService$P00" android:exported="false" android:process=":p0" />
+        <service android:name=".stub.StubService$P01" android:exported="false" android:process=":p0" />
+        <service android:name=".stub.StubService$P02" android:exported="false" android:process=":p1" />
+        <service android:name=".stub.StubService$P03" android:exported="false" android:process=":p1" />
+        <service android:name=".stub.StubService$P04" android:exported="false" android:process=":p2" />
+        <service android:name=".stub.StubService$P05" android:exported="false" android:process=":p2" />
+        <service android:name=".stub.StubService$P06" android:exported="false" android:process=":p3" />
+        <service android:name=".stub.StubService$P07" android:exported="false" android:process=":p3" />
+        <service android:name=".stub.StubService$P08" android:exported="false" android:process=":p4" />
+        <service android:name=".stub.StubService$P09" android:exported="false" android:process=":p4" />
+
+        <!-- ══ Stub Receivers ════════════════════════════════════════════ -->
+        <receiver android:name=".stub.StubReceiver$P00" android:exported="false" android:process=":p0" />
+        <receiver android:name=".stub.StubReceiver$P01" android:exported="false" android:process=":p1" />
+        <receiver android:name=".stub.StubReceiver$P02" android:exported="false" android:process=":p2" />
+        <receiver android:name=".stub.StubReceiver$P03" android:exported="false" android:process=":p3" />
+
+        <!-- ══ Stub ContentProviders ═════════════════════════════════════ -->
+        <provider
+            android:name=".stub.StubContentProvider$P00"
+            android:authorities="${applicationId}.stub.provider.p0"
+            android:exported="false"
+            android:process=":p0" />
+        <provider
+            android:name=".stub.StubContentProvider$P01"
+            android:authorities="${applicationId}.stub.provider.p1"
+            android:exported="false"
+            android:process=":p1" />
+        <provider
+            android:name=".stub.StubContentProvider$P02"
+            android:authorities="${applicationId}.stub.provider.p2"
+            android:exported="false"
+            android:process=":p2" />
+
+        <!-- ══ KVM Engine Service (persistent, main process) ════════════ -->
+        <service
+            android:name=".core.engine.KVMEngineService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:persistent="false">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="VirtualSpaceEngine" />
+        </service>
+
+        <!-- ══ Install Dispatcher ════════════════════════════════════════ -->
+        <activity
+            android:name=".core.installer.ApkInstallDispatcherActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Transparent"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" android:mimeType="application/vnd.android.package-archive" />
+                <data android:scheme="content" android:mimeType="application/vnd.android.package-archive" />
+            </intent-filter>
+        </activity>
+
+        <!-- ══ FileProvider for APK sharing ═════════════════════════════ -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <!-- Boot receiver for auto-restore of running virtual apps -->
+        <receiver
+            android:name=".core.engine.BootReceiver"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

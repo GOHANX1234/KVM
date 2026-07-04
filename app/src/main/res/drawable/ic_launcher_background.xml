@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Adaptive icon background — diagonal brand gradient (indigo → violet), in the
+  style of iOS system app icons (Messages, FaceTime, etc). Full 108x108dp
+  bleed; the launcher mask crops to the visible shape.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="108"
+                android:endY="108"
+                android:startColor="#6A5AE0"
+                android:endColor="#4338C4" />
+        </aapt:attr>
+    </path>
+</vector>

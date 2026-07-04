@@ -1,0 +1,42 @@
+workflows:
+  kvm-debug:
+    name: KVM Debug Build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+
+    environment:
+      vars:
+        NDK_VERSION: "26.3.11579264"
+        CMAKE_VERSION: "3.22.1"
+      java: 17
+
+    scripts:
+      - name: Install NDK and CMake
+        script: |
+          set -e
+          SDKMANAGER=$(find "$ANDROID_SDK_ROOT/cmdline-tools" -name sdkmanager -type f 2>/dev/null | head -1)
+          if [ -z "$SDKMANAGER" ]; then
+            SDKMANAGER=$(find "${ANDROID_HOME:-/usr/local/share/android-sdk}/cmdline-tools" -name sdkmanager -type f 2>/dev/null | head -1)
+          fi
+          echo "Using sdkmanager at: $SDKMANAGER"
+          yes | "$SDKMANAGER" --sdk_root="$ANDROID_SDK_ROOT" \
+            "ndk;${NDK_VERSION}" \
+            "cmake;${CMAKE_VERSION}"
+
+      - name: Generate Gradle wrapper
+        script: |
+          set -e
+          # Codemagic Mac machines ship with Gradle — use it to create the wrapper
+          # so subsequent steps can use ./gradlew (the standard Gradle entrypoint)
+          gradle wrapper --gradle-version=8.7 --distribution-type=bin
+          chmod +x gradlew
+
+      - name: Build debug APK
+        script: |
+          set -e
+          export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk/${NDK_VERSION}"
+          ./gradlew --no-daemon --stacktrace assembleDebug
+
+    artifacts:
+      - app/build/outputs/apk/**/*.apk
+      - app/build/outputs/native-debug-symbols/**/*.zip
